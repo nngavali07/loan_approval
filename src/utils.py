@@ -6,20 +6,17 @@ import pandas as pd
 
 class LoanApprovalClassification:
 
-    def load_model(self):
+    def __init__(self):
+        # ✅ Load ONCE when app starts
         with open(config.MODEL_FILE_PATH, "rb") as f:
             self.model = pickle.load(f)
-        return self.model
 
-    def load_json_data(self):
         with open(config.LABEL_DATA_PATH, "r") as f:
             self.encoded_data = json.load(f)
-        return self.encoded_data
+
+    
 
     def predict_loan_approval(self, input_user_data):
-        # Load model and encoders
-        self.load_model()
-        self.load_json_data()
 
         d = input_user_data
 
