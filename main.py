@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 from src.utils import LoanApprovalClassification
+import os
 
 app = Flask(__name__)
 Obj = LoanApprovalClassification()
@@ -41,4 +42,5 @@ def predictions():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",debug=False)
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host="0.0.0.0", port=port, debug=False)
