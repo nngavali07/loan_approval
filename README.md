@@ -7,6 +7,7 @@ Just create a file named **`README.md`** in the project root and paste **everyth
 ```markdown
 # 🏦 Loan Approval Prediction System
 
+
 An end-to-end **Machine Learning + Flask** application that predicts whether a loan application should be **Approved** or **Rejected** based on applicant financial and credit information.
 
 This project demonstrates **real-world ML engineering**, including data preprocessing, feature engineering, model training, probability-based decision making, and deployment.
