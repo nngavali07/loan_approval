@@ -67,10 +67,12 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_9D45B82956AA477586C826724FCDF7AB }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_801774D75CED4284838DD62560FB871A }}
 
-      - name: 'Deploy to Azure Web App'
+      - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
-        id: deploy-to-webapp
         with:
-          app-name: 'loan-approval-app'
-          slot-name: 'Production'
+          app-name: loan-approval-app
+          slot-name: Production
+          package: .
+          wait-for-deployment: false
+
           
